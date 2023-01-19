@@ -14,6 +14,7 @@ const CartegoryPage = () => {
   return (
     <>
       <Navbar />
+      <div className="container">
       <h3 className="heading">Category name</h3>
       <div className="cartegory-wrapper">
         <AddCart 
@@ -45,6 +46,7 @@ const CartegoryPage = () => {
              title="Apollo Running Short" 
              amount="$50.00" 
         />
+      </div>
       </div>
     </>
   );

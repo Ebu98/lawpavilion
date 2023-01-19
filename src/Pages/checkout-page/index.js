@@ -12,7 +12,13 @@ console.log('cart', cart)
   return (
       <>
       <Navbar />
+      <div className="content-wrapper">
     <div className='checkout-page' >
+    <div className='checkout-header'>
+      <div className='header-block'>
+      <span>Carts</span>
+      </div>
+      </div>
       { cart?.cartItems?.length ? (
         cart.cartItems.map((cartItem) =>
         <Checkout key={cartItem.id} cartItem={cartItem}/>
@@ -20,6 +26,7 @@ console.log('cart', cart)
             <p>Empty</p>
         )
       }
+      </div>
       </div>
     </>
   );

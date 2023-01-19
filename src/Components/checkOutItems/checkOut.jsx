@@ -3,10 +3,10 @@ import React from "react";
 import { addItem } from "../../redux/cart/cart.actions";
 import { clearItemFromCart } from "../../redux/cart/cart.actions";
 import { useDispatch } from "react-redux";
-// import "./checkout.scss"
+import "./checkOut.scss";
 
 const Checkout = (item) => {
-  console.log('item', item);
+  console.log("item", item);
   const dispatch = useDispatch();
   const addToCart = () => {
     dispatch(addItem(item));
@@ -17,10 +17,11 @@ const Checkout = (item) => {
   const clearItem = () => {
     dispatch(clearItemFromCart(item));
   };
-  const {cartItem : { photo, title, amount }} = item;
+  const {
+    cartItem: { photo, title, amount },
+  } = item;
   return (
     <>
-      
       <div className="checkout-item">
         <span className="name">{title}</span>
         <span className="name">{amount}</span>
@@ -28,6 +29,7 @@ const Checkout = (item) => {
           <img src={photo} alt="item" />
         </div>
         <span className="quantity">
+          
           <div
             className="arrow"
             onClick={() => {
@@ -35,16 +37,14 @@ const Checkout = (item) => {
             }}
           >
             +
-            {/* &#10094; */}
           </div>
-          {/* <span className="value">{quantity}</span> */}
+          <span className="value">1</span>
           <div
             className="arrow"
             onClick={() => {
-                addToCart();
+              addToCart();
             }}
           >
-            {/* &#10095; */}
             -
           </div>
         </span>
@@ -53,7 +53,6 @@ const Checkout = (item) => {
           &#10005;
         </div>
       </div>
-     
     </>
   );
 };
