@@ -6,9 +6,9 @@ import { useDispatch } from "react-redux";
 // import "./checkout.scss"
 
 const Checkout = (item) => {
+  console.log('item', item);
   const dispatch = useDispatch();
   const addToCart = () => {
-    console.log(item);
     dispatch(addItem(item));
   };
   const removeItem = () => {
@@ -17,7 +17,7 @@ const Checkout = (item) => {
   const clearItem = () => {
     dispatch(clearItemFromCart(item));
   };
-  const { photo, title, amount } = item;
+  const {cartItem : { photo, title, amount }} = item;
   return (
     <>
       
@@ -27,23 +27,6 @@ const Checkout = (item) => {
         <div className="image-container">
           <img src={photo} alt="item" />
         </div>
-
-        {/* <div>
-          {item ? (
-            item.map((value) => (
-              <div>
-                <span className="name">{value.title}</span>
-                <span className="name">{value.amount}</span>
-                <div className="image-container">
-                  <img src={value.photo} alt="item" />
-                </div>
-              </div>
-            ))
-          ) : (
-            <span className="empty-message">Your cart is empty</span>
-          )}
-        </div> */}
-
         <span className="quantity">
           <div
             className="arrow"
@@ -51,7 +34,8 @@ const Checkout = (item) => {
               removeItem();
             }}
           >
-            &#10094;
+            +
+            {/* &#10094; */}
           </div>
           {/* <span className="value">{quantity}</span> */}
           <div
@@ -60,7 +44,8 @@ const Checkout = (item) => {
                 addToCart();
             }}
           >
-            &#10095;
+            {/* &#10095; */}
+            -
           </div>
         </span>
         {/* <span className="price">{price}</span> */}
