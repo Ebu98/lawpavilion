@@ -1,0 +1,55 @@
+.cart-dropdown {
+  position: absolute;
+  width: 325px;
+  height: 677px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #ffffff;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+
+  .empty-message {
+    font-size: 15px;
+    margin: 50px auto;
+    color: #000;
+  }
+
+  .cart-items {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    // overflow: scroll;
+
+    .cart {
+      display: flex;
+      align-items: center;
+      padding: 32px 16px;
+      gap: 32px;
+      width: 136px;
+      height: 52px;
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 160%;
+      color: #1d1f22;
+
+      img {
+        width: 121px;
+        height: 190px;
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 1;
+      }
+    }
+  }
+
+  button {
+    margin-top: auto;
+    font-size: 13px;
+  }
+}
